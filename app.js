@@ -45,7 +45,7 @@ function startServer() {
 }
 
 function takeScreenShotPuppeteer(url, callback) {
-	puppeteer.launch({ headless: true }).then(browser => {
+	puppeteer.launch({ headless: true, executablePath: "/snap/bin/chromium" }).then(browser => {
 		browser.newPage()
 		.then(page => {
 			page.goto(url);
